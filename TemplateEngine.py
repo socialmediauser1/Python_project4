@@ -26,7 +26,7 @@ class TemplateEngine:
             if close_pos == -1:
                 out.append(text[open_pos:]); break
             key = text[open_pos + 2:close_pos].strip()
-            out.append("" if key == "" else text(context.get(key, "")))
+            out.append("" if key == "" else str(context.get(key, "")))
             index = close_pos + 2
         return "".join(out)
 
